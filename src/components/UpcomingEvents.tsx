@@ -96,6 +96,11 @@ export default function UpcomingEvents() {
             </div>
           ))}
         </div>
+        <div className="w-100 py-1 flex justify-center">
+          <Button variant={"viewAll"} className="border-customBlue">
+            View All
+          </Button>
+        </div>
       </div>
     </>
   );
