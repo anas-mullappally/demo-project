@@ -38,8 +38,7 @@ export default function Trending() {
         </div>
         <div className="xl:overflow-hidden overflow-x-scroll overflow-y-hidden scroll-none">
           <div className="grid grid-cols-2 gap-4 md:gap-0 md:gap-x-6 w-[300%] lg:w-[100%]">
-            {contents.map((item, index) => (
-            
+            {contents.map((item) => (
                 <div
                   className="flex flex-row items-start py-2 md:py-6 object-center "
                   key={item.id}
@@ -86,12 +85,11 @@ export default function Trending() {
                         <CiShare2 />
                       </div>
                     </div>
-                    <Button className="gradient h-8 md:h-10 w-20 md:w-40 text-xs md:text-base px-2 md:px-4 py-1 md:py-2">
+                    <Button variant={"commonBtn"} className="text-white">
                       Join Now
                     </Button>
                   </div>
                 </div>
-             
             ))}
           </div>
         </div>

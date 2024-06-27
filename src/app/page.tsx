@@ -3,6 +3,7 @@ import CardGrid from "@/components/CardGrid";
 import CarouselPart from "@/components/Carosel";
 import HomeTiles from "@/components/HomeTiles";
 import Trending from "@/components/Trending";
+import UpcomingEvents from "@/components/UpcomingEvents";
 
 
 export default function Home() {
@@ -12,6 +13,7 @@ export default function Home() {
       <HomeTiles />
       <CardGrid />
       <Trending/>
+      <UpcomingEvents/>
     </>
   );
 }
