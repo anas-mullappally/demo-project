@@ -23,7 +23,7 @@ export default function UpcomingEvents() {
               <div className="md:ml-10 p-3 md:pb-0 md:mb-0 bg-white md:bg-transparent md:w-[80%]">
                 <div className="flex justify-between truncate">
                   <div>
-                    <div className="capitalize text-primary text-base font-bold md:text-xl lg:text-2xl md:w-[40vw] truncate">
+                    <div className="text-customBlue capitalize text-primary text-base font-bold md:text-xl lg:text-2xl md:w-[40vw] truncate">
                       Ageless Elegance: Senior Style Takes Center Stage!
                     </div>
                     <div className="text-[10px] md:text-sm lg:text-base md:py-1 lg:pt-4 font-semibold text-[#009DA9] ">
@@ -83,7 +83,7 @@ export default function UpcomingEvents() {
                       <FaHandHoldingMedical size={25} />
                       <span>3</span>
                     </div>
-                    <div className="flex gap-2">
+                    <div className="flex gap-2 items-center justify-center">
                       <FaRegCommentDots size={25} />
                       <span>3</span>
                     </div>
