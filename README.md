@@ -3,7 +3,7 @@
 Manipal Community Connect Demo is a [Next.js](https://nextjs.org/) project that clones the Manipal Community Connect website. This project replicates the key functionalities and design elements of the original site. 
 
 ## Tech Stack 
-Next.js, Shadcn, Tailwind
+Next.js, Shadcn, Tailwind, Zustand
 
 ## Usage
 1. Clone the repository 
