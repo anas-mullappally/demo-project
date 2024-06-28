@@ -1,6 +1,18 @@
 import { Button } from "./ui/button";
 import { ChevronDown } from "lucide-react";
-
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+// import { Input } from "@/components/ui/input";
+// import { Label } from "@/components/ui/label";
+import { Copy } from "lucide-react";
 /* eslint-disable @next/next/no-img-element */
 // col-span-3 text-[8px] flex items-center cursor-pointer md:text-base h-6 md:h-10 w-16 md:w-40 text-primary md:px-4 py-1 md:py-2 rounded-[4px] md:rounded-xl border border-primary border-solid
 export default function Header() {
@@ -62,9 +74,62 @@ export default function Header() {
                   src="/Vector.svg"
                 />
               </label>
-              <Button className= "gradient h-8 md:h-10 w-20 md:w-40 text-xs md:text-base md:px-4 px-2 py-1 md:py-2">
+              <Dialog>
+                <DialogTrigger asChild>
+                  <Button className="gradient h-8 md:h-10 w-20 md:w-40 text-xs md:text-base md:px-4 px-2 py-1 md:py-2">
+                    Create A Post <ChevronDown className="ml-2 h-4 w-4" />
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="w-full">
+                  <div className="flex  justify-between space-x-2">
+                    <div className="lg:w-2/4 md:w-3/4 relative hidden md:block h-full mr-2">
+                      <img
+                        className="w-full h-full relative"
+                        src="https://www.manipalcommunityconnect.in/_next/image?url=%2Fimages%2FcreatePost.png&w=1200&q=75"
+                        alt="image"
+                      />
+                    </div>
+                    <div className="flex flex-col overflow-hidden">
+                      <div className="flex  flex-col items-start">
+                        <div className="font-semibold text-2xl text-primary">
+                          Create an account now!
+                        </div>
+                        <div className="w-[90vw] md:w-full py-2 font-medium opacity-50 text-[#181B1E] text-base">
+                          To continue using and get full access to this site,
+                          you need to create an account!
+                        </div>
+                      </div>
+                      <div className="my-3 mx-0 text-base text-gray-500">
+                        <div className="list-disc">
+                          By signing up you will be able to:
+                        </div>
+                        <ul>
+                          <li className="list-disc ml-4">
+                            Register for events{" "}
+                          </li>
+                          <li className="list-disc ml-4">Create a post </li>
+                          <li className="list-disc ml-4">
+                            Participate in discussions
+                          </li>
+                          <li className="list-disc ml-4">React on posts</li>
+                          <li className="list-disc ml-4">
+                            Apply for Neighbourhood Card
+                          </li>
+                        </ul>
+                        <div className="text-gray-400 text-base">
+                          and much more!
+                        </div>
+                      </div>
+                      <div className="flex justify-center">
+                        <Button className="gradient h-8 md:h-10 w-20 md:w-40 text-xs md:text-base md:px-4 px-2 py-1 md:py-2" >Sign up Now!</Button>
+                      </div>
+                    </div>
+                  </div>
+                </DialogContent>
+              </Dialog>
+              {/* <Button className="gradient h-8 md:h-10 w-20 md:w-40 text-xs md:text-base md:px-4 px-2 py-1 md:py-2">
                 Create A Post <ChevronDown className="ml-2 h-4 w-4" />
-              </Button>
+              </Button> */}
               <Button
                 className="text-blue-600 border-blue-600 h-8 md:h-10 w-20 md:w-40 text-xs md:text-base md:px-4 px-2 py-1 md:py-2"
                 variant={"outline"}
