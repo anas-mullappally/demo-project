@@ -2,19 +2,11 @@ import { Button } from "./ui/button";
 import { ChevronDown } from "lucide-react";
 import {
   Dialog,
-  DialogClose,
   DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-// import { Input } from "@/components/ui/input";
-// import { Label } from "@/components/ui/label";
-import { Copy } from "lucide-react";
 /* eslint-disable @next/next/no-img-element */
-// col-span-3 text-[8px] flex items-center cursor-pointer md:text-base h-6 md:h-10 w-16 md:w-40 text-primary md:px-4 py-1 md:py-2 rounded-[4px] md:rounded-xl border border-primary border-solid
+
 export default function Header() {
   return (
     <>

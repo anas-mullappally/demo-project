@@ -1,11 +1,14 @@
+"use client";
 import { AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
 import { Avatar } from "./ui/avatar";
 import { FaHandHoldingMedical, FaRegCommentDots } from "react-icons/fa";
 import { CiShare2 } from "react-icons/ci";
 import ViewAll from "./common/ViewAll";
+import { demoStore } from "@/store/store";
 
 export default function VideoDairies() {
-  const arr = [45, 56, 577];
+  const { videos } = demoStore();
+
   return (
     <>
       <div className="md:px-14 px-3 lg:py-8 ">
@@ -14,8 +17,8 @@ export default function VideoDairies() {
         </div>
         <div className="lg:overflow-hidden overflow-x-scroll scroll-none ">
           <div className="grid grid-cols-3 md:grid-cols-3 md:gap-4 rounded-xl gap-3 w-[250%] md:[160%] lg:w-[100%] ">
-            {arr.map((item) => (
-              <div className="h-full md:mb-8" key={item}>
+            {videos.map((video) => (
+              <div className="h-full md:mb-8" key={video.id}>
                 <div className="bg-[#e5f5f6] w-full rounded-xl flex flex-col">
                   <div className="w-max">
                     <div className="flex flex-row py-3 px-4 items-center">
@@ -30,11 +33,11 @@ export default function VideoDairies() {
                       </div>
                       <div>
                         <div className="text-black bg-cover font-bold px-4 text-xs md:text-base capitalize">
-                          Ravi Kumar
+                          {video.user.name}
                         </div>
                         <div className="text-[10px] md:text-xs ml-2 text-[#212121] font-normal md:pl-0">
                           <span className="pr-1"></span>
-                          <span className="pl-1">MAR 09 2024</span>
+                          <span className="pl-1">{video.date}</span>
                         </div>
                       </div>
                     </div>
@@ -52,7 +55,7 @@ export default function VideoDairies() {
                       >
                         <iframe
                           title="YouTube video player"
-                          src="https://www.youtube.com/embed/LxOe2nopywo"
+                          src={video.link}
                           width="100%"
                           height="100%"
                           frameBorder="0"
@@ -72,7 +75,7 @@ export default function VideoDairies() {
 
                   <div className="py-4 px-4 truncate text-center">
                     <span className="text-base md:text-xl font-bold text-black h-10 text-center capitalize cursor-pointer truncate">
-                      {"Women's Day special wishes"}
+                      {video.title}
                     </span>
 
                     <div className="flex justify-center">
@@ -80,11 +83,11 @@ export default function VideoDairies() {
                         <div className="flex gap-2">
                           <div className="flex gap-2">
                             <FaHandHoldingMedical size={25} />
-                            <span>3</span>
+                            <span>{video.likes.length}</span>
                           </div>
                           <div className="flex gap-2 items-center justify-center">
                             <FaRegCommentDots size={25} />
-                            <span>3</span>
+                            <span>{video.comments.length}</span>
                           </div>
                           <div>
                             <CiShare2 size={25} />

@@ -1,12 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
+"use client"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "./ui/button";
 import { FaHandHoldingMedical, FaRegCommentDots } from "react-icons/fa";
 import { CiShare2 } from "react-icons/ci";
 import ViewAll from "./common/ViewAll";
+import { demoStore } from "@/store/store";
 
 export default function Blogs() {
-  const arr = ["v", "u", "x", "z"];
+  const { blogs } = demoStore();
+
   return (
     <>
       <div className="md:px-14 px-3 lg:py-8 ">
@@ -15,15 +18,15 @@ export default function Blogs() {
         </div>
         <div className="w-[100%] py-3 md:py-4">
           <div className=" flex flex-nowrap overflow-x-auto md:grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {arr.map((item) => (
+            {blogs.map((blog) => (
               <div
                 className=" flex flex-col flex-shrink-0 w-[calc(100vw-1rem)] md:w-auto lg:w-auto"
-                key={item}
+                key={blog.id}
               >
                 <div className=" rounded-t-lg object-center object-cover h-[250px]">
                   <img
-                    src="https://mhcp-prod.s3.us-west-2.amazonaws.com/posts/645e97b35f42135f2145048f/blog.webp"
-                    alt="aaa"
+                    src={blog.image}
+                    alt={blog.title}
                     className="h-full w-full"
                   />
                 </div>
@@ -38,16 +41,15 @@ export default function Blogs() {
                       <AvatarFallback>CN</AvatarFallback>
                     </Avatar>
                     <div className="text-black font-bold px-1 md:px-2 text-xs md:text-base capitalize">
-                      Manipal Hospitals
+                      {blog.user.name}
                     </div>
                   </div>
                   <div className="text-[10px] md:text-xs py-1 md:py-2 text-[#212121] font-normal h-8 flex gap-4 uppercase">
                     <span className="pr-1">POSTED ON</span>
-                    <span className="pl-1 ">MAY 12 2023</span>
+                    <span className="pl-1 ">{blog.date}</span>
                   </div>
                   <h5 className="text-customBlue text-base  md:text-xl font-bold  h-8 truncate text-primary capitalize">
-                    {" "}
-                    Arthritis - Joint Pain Worst at Night or Early Morning{" "}
+                    {blog.title}
                   </h5>
                   <div className="font-light text-sm md:text-base text-para md:my-3  md:px-0 text-justify opacity-70 h-14 overflow-hidden my-2 relative ">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -73,11 +75,11 @@ export default function Blogs() {
                   <div className="flex gap-2">
                     <div className="flex gap-2">
                       <FaHandHoldingMedical size={25} />
-                      <span>3</span>
+                      <span>{blog.likes.length}</span>
                     </div>
                     <div className="flex gap-2 items-center justify-center">
                       <FaRegCommentDots size={25} />
-                      <span>3</span>
+                      <span>{blog.comments.length}</span>
                     </div>
                     <div>
                       <CiShare2 size={25} />
@@ -88,7 +90,7 @@ export default function Blogs() {
             ))}
           </div>
         </div>
-        <ViewAll/>
+        <ViewAll />
       </div>
     </>
   );

@@ -1,10 +1,12 @@
+"use client";
 import { FaHandHoldingMedical, FaRegCommentDots } from "react-icons/fa";
 import { Button } from "./ui/button";
 import { CiShare2 } from "react-icons/ci";
 import ViewAll from "./common/ViewAll";
+import { demoStore } from "@/store/store";
 /* eslint-disable @next/next/no-img-element */
 export default function UpcomingEvents() {
-  const arr = ["a", "b"];
+  const { events } = demoStore();
   return (
     <>
       <div className="md:px-14 px-3 lg:py-8">
@@ -12,8 +14,11 @@ export default function UpcomingEvents() {
           Upcoming Events
         </div>
         <div className="lg:overflow-hidden overflow-x-scroll scroll-none">
-          {arr.map((item) => (
-            <div className="md:bg-[#009DA9]/[0.06] rounded-lg md:flex mb-6 md:shadow-lg " key={item}>
+          {events.map((event) => (
+            <div
+              className="md:bg-[#009DA9]/[0.06] rounded-lg md:flex mb-6 md:shadow-lg "
+              key={event.id}
+            >
               <div className="md:w-[20%] text-center h-[220px] md:h-[258px] block">
                 <img
                   className=" h-full object-cover object-center bg-slate-200"
@@ -25,14 +30,14 @@ export default function UpcomingEvents() {
                 <div className="flex justify-between truncate">
                   <div>
                     <div className="text-customBlue capitalize text-primary text-base font-bold md:text-xl lg:text-2xl md:w-[40vw] truncate">
-                      Ageless Elegance: Senior Style Takes Center Stage!
+                      {event.title}
                     </div>
                     <div className="text-[10px] md:text-sm lg:text-base md:py-1 lg:pt-4 font-semibold text-[#009DA9] ">
                       EVENT
                     </div>
                     <div className=" font-normal text-[10px] md:text-xs lg:text-xs lg:pr-4 py-1 block md:hidden">
                       <span className="pr-1">DATE OF EVENT</span>
-                      <span className="pl-1 font-bold">JUN 29 2024</span>
+                      <span className="pl-1 font-bold">{event.date}</span>
                     </div>
                   </div>
                   <div className="pl-3 pb-3 font-medium ml-4 hidden md:flex items-center">
