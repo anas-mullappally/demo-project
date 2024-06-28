@@ -1,6 +1,7 @@
 import { FaHandHoldingMedical, FaRegCommentDots } from "react-icons/fa";
 import { Button } from "./ui/button";
 import { CiShare2 } from "react-icons/ci";
+import ViewAll from "./common/ViewAll";
 /* eslint-disable @next/next/no-img-element */
 export default function UpcomingEvents() {
   const arr = ["a", "b"];
@@ -96,11 +97,7 @@ export default function UpcomingEvents() {
             </div>
           ))}
         </div>
-        <div className="w-100 py-1 flex justify-center">
-          <Button variant={"viewAll"} className="border-customBlue">
-            View All
-          </Button>
-        </div>
+        <ViewAll />
       </div>
     </>
   );

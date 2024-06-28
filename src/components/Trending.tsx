@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { CiShare2 } from "react-icons/ci";
 import { MdOutlinePeopleAlt } from "react-icons/md";
+import ViewAll from "./common/ViewAll";
 
 export default function Trending() {
   const contents = [
@@ -93,11 +94,7 @@ export default function Trending() {
             ))}
           </div>
         </div>
-        <div className="w-100 py-1 flex justify-center">
-          <Button variant={"viewAll"} className="border-customBlue">
-            View All
-          </Button>
-        </div>
+        <ViewAll />
       </div>
     </>
   );

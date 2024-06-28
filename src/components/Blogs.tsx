@@ -3,6 +3,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "./ui/button";
 import { FaHandHoldingMedical, FaRegCommentDots } from "react-icons/fa";
 import { CiShare2 } from "react-icons/ci";
+import ViewAll from "./common/ViewAll";
 
 export default function Blogs() {
   const arr = ["v", "u", "x", "z"];
@@ -87,11 +88,7 @@ export default function Blogs() {
             ))}
           </div>
         </div>
-        <div className="w-100 py-1 flex justify-center">
-          <Button variant={"viewAll"} className="border-customBlue">
-            View All
-          </Button>
-        </div>
+        <ViewAll/>
       </div>
     </>
   );
