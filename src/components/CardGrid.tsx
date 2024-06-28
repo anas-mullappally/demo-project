@@ -1,7 +1,6 @@
 "use client";
 import { FaRegArrowAltCircleRight } from "react-icons/fa";
 import { useState, useEffect } from "react";
-import ViewAll from "./common/ViewAll";
 
 const CardGrid = () => {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -58,7 +57,10 @@ const CardGrid = () => {
           {item.text}
         </div>
       ))}
-      <ViewAll/>
+      <div className="py-1 leading-[10px] flex bg-white border-[1px] md:border-2 rounded-md border-[#009DA9] flex-col justify-center items-center col-span-1 w-full text-[#009DA9]">
+        <div className="mb-2">View All</div>
+        <FaRegArrowAltCircleRight size={20} />
+      </div>
     </div>
   );
 };
