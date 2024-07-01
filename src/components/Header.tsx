@@ -5,6 +5,7 @@ import {
   DialogContent,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import CarouselPart from "./Carosel";
 /* eslint-disable @next/next/no-img-element */
 
 export default function Header() {
@@ -119,12 +120,25 @@ export default function Header() {
                   </div>
                 </DialogContent>
               </Dialog>
+
+              {/* <Dialog>
+              <DialogTrigger asChild> */}
               <Button
                 className="text-blue-600 border-blue-600 h-8 md:h-10 w-20 md:w-40 text-xs md:text-base md:px-4 px-2 py-1 md:py-2"
                 variant={"outline"}
               >
                 Sign Up/Login
               </Button>
+                {/* </DialogTrigger>
+                <DialogTrigger>
+                  <div className="flex bg-white md:bg-[#EDEDED] text-black w-full">
+                    <div className=" relative hidden lg:block">
+                     
+                    </div>
+                  </div>
+                </DialogTrigger>
+              </Dialog> */}
+              
             </div>
           </div>
         </div>

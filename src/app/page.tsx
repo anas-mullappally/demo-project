@@ -2,6 +2,7 @@
 import Blogs from "@/components/Blogs";
 import CardGrid from "@/components/CardGrid";
 import CarouselPart from "@/components/Carosel";
+import Featured from "@/components/Featured";
 import HomeTiles from "@/components/HomeTiles";
 import StickySlide from "@/components/StickySide";
 import Trending from "@/components/Trending";
@@ -13,6 +14,7 @@ export default function Home() {
     <>
       <StickySlide/>
       <CarouselPart />
+      <Featured/>
       <HomeTiles />
       <CardGrid />
       <Trending />

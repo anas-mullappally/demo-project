@@ -1,3 +1,4 @@
+import { title } from "process";
 import { create } from "zustand";
 
 export const userStore = create((set) => ({
@@ -143,6 +144,33 @@ export const demoStore = create(() => ({
       date: "JUL 04 2024",
       likes: [],
       comments: [],
+    },
+  ],
+  featured: [
+    {
+      id: 51,
+      title: "Dengue- Tips to keep youself safe",
+      date: "JUN 27 2023",
+      type: "blog",
+      image:
+        "https://mhcp-prod.s3.us-west-2.amazonaws.com/posts/649aa108fdf3566e61d5afa7/blog.webp",
+    },
+    {
+      id: 52,
+      title:
+        "To eat and not overeat? Why should you speak to an expert before trying new diets?",
+      date: "JUN 18 2023",
+      type: "discussion",
+      image:
+        "https://mhcp-prod.s3.us-west-2.amazonaws.com/forums/645e6d4e5f42135f2144f117/image.webp",
+    },
+    {
+      id: 53,
+      title: "Manipal News Bulletin- Spinal Tumors",
+      date: "JUN 25 2023",
+      type: "testimonial",
+      image:
+        "https://mhcp-prod.s3.us-west-2.amazonaws.com/posts/649aa108fdf3566e61d5afa7/blog.webp",
     },
   ],
 }));
