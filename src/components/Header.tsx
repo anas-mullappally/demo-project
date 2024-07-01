@@ -1,14 +1,20 @@
+"use client";
 import { Button } from "./ui/button";
 import { ChevronDown } from "lucide-react";
-import {
-  Dialog,
-  DialogContent,
-  DialogTrigger,
-} from "@/components/ui/dialog";
-import CarouselPart from "./Carosel";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { useState } from "react";
+import Modal from "./Modal";
+import Profile from "./Profile";
+import { userStore } from "@/store/store";
 /* eslint-disable @next/next/no-img-element */
 
 export default function Header() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const { user } = userStore();
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+
   return (
     <>
       <div className="bg-white sticky top-0 z-40 w-full border-solid ">
@@ -114,31 +120,30 @@ export default function Header() {
                         </div>
                       </div>
                       <div className="flex justify-center">
-                        <Button className="gradient h-8 md:h-10 w-20 md:w-40 text-xs md:text-base md:px-4 px-2 py-1 md:py-2" >Sign up Now!</Button>
+                        <Button className="gradient h-8 md:h-10 w-20 md:w-40 text-xs md:text-base md:px-4 px-2 py-1 md:py-2">
+                          Sign up Now!
+                        </Button>
                       </div>
                     </div>
                   </div>
                 </DialogContent>
               </Dialog>
 
-              {/* <Dialog>
-              <DialogTrigger asChild> */}
-              <Button
-                className="text-blue-600 border-blue-600 h-8 md:h-10 w-20 md:w-40 text-xs md:text-base md:px-4 px-2 py-1 md:py-2"
-                variant={"outline"}
-              >
-                Sign Up/Login
-              </Button>
-                {/* </DialogTrigger>
-                <DialogTrigger>
-                  <div className="flex bg-white md:bg-[#EDEDED] text-black w-full">
-                    <div className=" relative hidden lg:block">
-                     
-                    </div>
-                  </div>
-                </DialogTrigger>
-              </Dialog> */}
-              
+              {!user ? (
+                <Button
+                  className="text-blue-600 border-blue-600 h-8 md:h-10 w-20 md:w-40 text-xs md:text-base md:px-4 px-2 py-1 md:py-2"
+                  variant={"outline"}
+                  onClick={toggleModal}
+                >
+                  Sign Up/Login
+                </Button>
+              ) : (
+                <>
+                  <Profile />
+                </>
+              )}
+
+              {isModalOpen && <Modal onClose={toggleModal} />}
             </div>
           </div>
         </div>

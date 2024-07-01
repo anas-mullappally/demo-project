@@ -1,8 +1,35 @@
-import { title } from "process";
+import { auth } from "@/firebase";
+import {
+  GoogleAuthProvider,
+  signInWithPopup,
+  User as FirebaseUser,
+} from "firebase/auth";
 import { create } from "zustand";
+import { User,UserStore } from "../types/types";
 
-export const userStore = create((set) => ({
+
+export const userStore = create<UserStore>((set) => ({
   user: null,
+  // setUser: (user) => set({ user }),
+  signOut: () => set({ user: null }),
+  googleSignIn: async () => {
+    const googleAuthProvider = new GoogleAuthProvider();
+    try {
+      const result = await signInWithPopup(auth, googleAuthProvider);
+      const firebaseUser: FirebaseUser = result.user;
+      console.log(firebaseUser.photoURL);
+
+      const user: User = {
+        id: firebaseUser.uid,
+        name: firebaseUser.displayName || "",
+        email: firebaseUser.email || "",
+        image: firebaseUser.photoURL || "",
+      };
+      set({ user });
+    } catch (error) {
+      console.error("Google sign-in error:", error);
+    }
+  },
 }));
 
 export const demoStore = create(() => ({
