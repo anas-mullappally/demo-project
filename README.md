@@ -3,7 +3,7 @@
 Manipal Community Connect Demo is a [Next.js](https://nextjs.org/) project that clones the Manipal Community Connect website. This project replicates the key functionalities and design elements of the original site. 
 
 ## Tech Stack 
-Next.js, Shadcn, Tailwind, Zustand
+Next.js, Shadcn, Tailwind, Zustand, Firebase
 
 ## Usage
 1. Clone the repository 
@@ -16,7 +16,21 @@ Next.js, Shadcn, Tailwind, Zustand
        cd demo-project
        npm install
     ```
-3. Run the project
+
+3. Setup Environment Variables
+    1. Create a .env.local file in the root directory of your project.
+    2. Add the following environment variables to the .env.local file:
+    ```
+        NEXT_PUBLIC_GOOGLE_API = 
+        NEXT_PUBLIC_AUTH_DOMAIN = 
+        NEXT_PUBLIC_PROJECT_ID = 
+        NEXT_PUBLIC_STORAGE_BUCKET = 
+        NEXT_PUBLIC_SENDER_ID = 
+        NEXT_PUBLIC_APP_ID = 
+    ```
+    Replace the placeholder values (your_google_api_key, your_auth_domain, etc.) with the actual values from your Firebase project.
+
+4. Run the project
     ```bash
         npm run dev
         # or
