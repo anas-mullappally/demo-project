@@ -3,12 +3,12 @@
 import { Button } from "@/components/ui/button";
 import { CiShare2 } from "react-icons/ci";
 import { MdOutlinePeopleAlt } from "react-icons/md";
-import ViewAll from "./common/ViewAll";
+import ViewAll from "../common/ViewAll";
 import { demoStore } from "@/store/store";
 
 export default function Trending() {
   const { discussions } = demoStore();
-  
+
   return (
     <>
       <div className="md:px-14 px-3 lg:py-8">
@@ -72,7 +72,7 @@ export default function Trending() {
             ))}
           </div>
         </div>
-        <ViewAll />
+        <ViewAll redirectTo="/discussion" />
       </div>
     </>
   );

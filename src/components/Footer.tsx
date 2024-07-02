@@ -118,7 +118,7 @@ export default function Footer() {
         
         <div className="grid grid-cols-1 md:grid-cols-2 bg-primary1">
           <section className="col-span-1 text-[6px] md:text-base">
-            <div className="flex text-white py-2 justify-center">
+            <div className="flex text-white py-2 justify-center items-center">
               <div className="px-1 md:px-3">Copyright</div>
               <CgCopyright size={20} />
               <div className="px-1 md:px-3">

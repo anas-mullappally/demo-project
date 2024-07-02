@@ -1,12 +1,14 @@
-import Blogs from "@/components/Blogs";
-import CardGrid from "@/components/CardGrid";
-import CarouselPart from "@/components/Carosel";
-import Featured from "@/components/Featured";
-import HomeTiles from "@/components/HomeTiles";
-import StickySlide from "@/components/StickySide";
-import Trending from "@/components/Trending";
-import UpcomingEvents from "@/components/UpcomingEvents";
-import VideoDairies from "@/components/VideoDairies";
+
+import Blogs from "@/components/Home/Blogs";
+import CardGrid from "@/components/Home/CardGrid";
+import CarouselPart from "@/components/Home/Carosel";
+import Featured from "@/components/Home/Featured";
+import HomeTiles from "@/components/Home/HomeTiles";
+import StickySlide from "@/components/Home/StickySide";
+import Trending from "@/components/Home/Trending";
+import UpcomingEvents from "@/components/Home/UpcomingEvents";
+import VideoDairies from "@/components/Home/VideoDairies";
+
 
 export default function Home() {
   return (

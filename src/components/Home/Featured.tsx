@@ -1,6 +1,6 @@
-"use client"
+"use client";
 import { demoStore } from "@/store/store";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 
 /* eslint-disable @next/next/no-img-element */
 export default function Featured() {
@@ -29,7 +29,7 @@ export default function Featured() {
                     </div>
                     <div className="p-1 md:p-3">
                       <h5 className="text-base md:text-xl font-bold h-10 md:h-10 text-customBlue pt-3 px-2 truncate capitalize">
-                       {feature.title}
+                        {feature.title}
                       </h5>
                       <div className="text-[10px] md:text-xs py-1 md:py-2 text-[#212121] font-normal px-2">
                         <span className="pr-1">POSTED ON</span>
@@ -40,7 +40,6 @@ export default function Featured() {
                       </div>
                       <div className="flex justify-center xl:mb-0 px-2">
                         <Button variant={"commonBtn"} className="text-white">
-                          {" "}
                           View
                         </Button>
                       </div>

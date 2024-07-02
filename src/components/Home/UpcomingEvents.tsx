@@ -1,9 +1,9 @@
 "use client";
 import { FaHandHoldingMedical, FaRegCommentDots } from "react-icons/fa";
-import { Button } from "./ui/button";
 import { CiShare2 } from "react-icons/ci";
-import ViewAll from "./common/ViewAll";
 import { demoStore } from "@/store/store";
+import { Button } from "../ui/button";
+import ViewAll from "../common/ViewAll";
 /* eslint-disable @next/next/no-img-element */
 export default function UpcomingEvents() {
   const { events } = demoStore();
@@ -102,7 +102,7 @@ export default function UpcomingEvents() {
             </div>
           ))}
         </div>
-        <ViewAll />
+        <ViewAll redirectTo="/events" />
       </div>
     </>
   );

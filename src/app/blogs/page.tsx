@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import Image from "next/image";
 import {
@@ -11,8 +12,11 @@ import {
 } from "@/components/ui/select";
 import { FaSearch } from "react-icons/fa";
 import { Input } from "@/components/ui/input";
+import { demoStore } from "@/store/store";
+import SingleBlog from "@/components/common/SingleBlog";
 
 const Page = () => {
+  const { blogs } = demoStore();
   return (
     <>
       <div className="min-h-[72vh] md:min-h-[65vh] lg:min-h-[50vh]">
@@ -55,7 +59,7 @@ const Page = () => {
                   <div className="flex gap-4 mb-2 md:mb-4 lg:mb-2 justify-start align-middle ">
                     <>
                       <Select defaultValue="latest">
-                        <SelectTrigger className="w-[180px] rounded-full">
+                        <SelectTrigger className=" rounded-full">
                           <SelectValue placeholder="Select a fruit" />
                         </SelectTrigger>
                         <SelectContent>
@@ -68,12 +72,11 @@ const Page = () => {
                           </SelectGroup>
                         </SelectContent>
                       </Select>
-                      <div className="relative w-[200px] outline-none">
+                      <div className="relative  outline-none">
                         <Input
                           type="email"
                           placeholder="Email"
                           className="pl-10 rounded-full outline-none"
-                          //   style={{outline:"none"}}
                         />
                         <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none outline-none">
                           <FaSearch className="text-gray-500" />
@@ -85,7 +88,7 @@ const Page = () => {
                   <div className="flex justify-end ">
                     <div className=" md:col-span-2 col-span-4  md:text-right ml-1 md:ml-2  md:text-dark">
                       <Select defaultValue="latest">
-                        <SelectTrigger className="w-[180px] rounded-full">
+                        <SelectTrigger className=" rounded-full">
                           <SelectValue placeholder="Select a fruit" />
                         </SelectTrigger>
                         <SelectContent>
@@ -110,15 +113,12 @@ const Page = () => {
                   </div>
                 </div>
               </div>
-
             </div>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-4 lg:gap-5 mt-2 lg:pt-6">
-                <div className="h-24 bg-violet-500"></div>
-                <div className="h-24 bg-violet-500"></div>
-                <div className="h-24 bg-violet-500"></div>
-                <div className="h-24 bg-violet-500"></div>
-                <div className="h-24 bg-violet-500"></div>
-              </div>
+            <div className="grid grid-cols-1 mb-8 md:grid-cols-2 lg:grid-cols-4 gap-2 md:gap-4 lg:gap-5 mt-2 lg:pt-6">
+              {blogs.map((blog) => (
+                <SingleBlog blog={blog} key={blog.id} />
+              ))}
+            </div>
           </div>
         </div>
       </div>

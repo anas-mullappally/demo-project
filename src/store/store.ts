@@ -70,7 +70,7 @@ export const demoStore = create(() => ({
   ],
   blogs: [
     {
-      id: 11,
+      id: "11",
       user: {
         name: "Manipal Hospitals",
       },
@@ -82,7 +82,7 @@ export const demoStore = create(() => ({
       comments: [12, 1233, 213],
     },
     {
-      id: 12,
+      id: "12",
       user: {
         name: "Indranil Roy Choudhury",
       },
@@ -94,7 +94,7 @@ export const demoStore = create(() => ({
       comments: [213],
     },
     {
-      id: 13,
+      id: "13",
       user: {
         name: "Manipal Hospitals",
       },
@@ -106,7 +106,7 @@ export const demoStore = create(() => ({
       comments: [],
     },
     {
-      id: 14,
+      id: "14",
       user: {
         name: "Manipal Hospitals",
       },

@@ -1,9 +1,9 @@
 "use client";
 import { AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
-import { Avatar } from "./ui/avatar";
+import { Avatar } from "../ui/avatar";
 import { FaHandHoldingMedical, FaRegCommentDots } from "react-icons/fa";
 import { CiShare2 } from "react-icons/ci";
-import ViewAll from "./common/ViewAll";
+import ViewAll from "../common/ViewAll";
 import { demoStore } from "@/store/store";
 
 export default function VideoDairies() {
@@ -101,7 +101,7 @@ export default function VideoDairies() {
             ))}
           </div>
         </div>
-        <ViewAll />
+        <ViewAll redirectTo="/video" />
       </div>
     </>
   );
