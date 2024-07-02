@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import Blogs from "@/components/Blogs";
 import CardGrid from "@/components/CardGrid";
 import CarouselPart from "@/components/Carosel";
