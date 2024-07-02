@@ -66,15 +66,15 @@ function SingleBlog({ blog }: { blog: Blog }) {
           </Button>
           <div className="flex gap-2">
             <div className="flex gap-2">
-              <FaHandHoldingMedical size={25} />
+              <FaHandHoldingMedical size={25} className="cursor-pointer" />
               <span>{blog.likes.length}</span>
             </div>
             <div className="flex gap-2 items-center justify-center">
-              <FaRegCommentDots size={25} />
+              <FaRegCommentDots className="cursor-pointer" size={25} />
               <span>{blog.comments.length}</span>
             </div>
             <div>
-              <CiShare2 size={25} />
+              <CiShare2 className="cursor-pointer" size={25} />
             </div>
           </div>
         </div>

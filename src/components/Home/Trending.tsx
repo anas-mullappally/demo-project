@@ -72,7 +72,7 @@ export default function Trending() {
             ))}
           </div>
         </div>
-        <ViewAll redirectTo="/discussion" />
+        <ViewAll redirectTo="/discussions" />
       </div>
     </>
   );

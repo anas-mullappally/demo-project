@@ -101,7 +101,7 @@ export default function VideoDairies() {
             ))}
           </div>
         </div>
-        <ViewAll redirectTo="/video" />
+        <ViewAll redirectTo="/videos" />
       </div>
     </>
   );

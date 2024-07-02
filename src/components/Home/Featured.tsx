@@ -1,6 +1,7 @@
 "use client";
 import { demoStore } from "@/store/store";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 /* eslint-disable @next/next/no-img-element */
 export default function Featured() {
@@ -39,9 +40,11 @@ export default function Featured() {
                         {feature.type}
                       </div>
                       <div className="flex justify-center xl:mb-0 px-2">
-                        <Button variant={"commonBtn"} className="text-white">
-                          View
-                        </Button>
+                        <Link href={`/${feature.type}s`}>
+                          <Button variant={"commonBtn"} className="text-white">
+                            View
+                          </Button>
+                        </Link>
                       </div>
                     </div>
                   </div>
