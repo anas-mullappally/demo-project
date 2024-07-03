@@ -34,12 +34,12 @@ export default function Header() {
               </a>
             </div>
             <div className="bg-primary relative top-3 md:top-4 ml-3 py-0 md:py-2 rounded-lg flex items-center justify-center h-[26px] md:h-[47px] shadow-md px-2 md:px-3 cursor-pointer">
-              <a href="/" className="flex items-center">
+              <a href="/neighborhood" className="flex items-center">
                 <span className="absolute top-0 -translate-y-1/2 -left-2 text-white text-[8px] md:text-sm font-medium bg-[#00b7ac] rounded p-[2px] md:p-1">
                   New
                 </span>
                 <span className="hidden md:block text-white md:text-base lg:text-lg font-semibold text-center">
-                  Neighbourhood Card
+                  Neighborhood Card
                 </span>
                 <span className="md:hidden block text-white text-[9px] font-semibold text-center">
                   NHCard
