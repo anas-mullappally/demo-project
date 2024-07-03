@@ -120,19 +120,23 @@ function page() {
       <div className="text-center mb-5">
         <div>
           For any queries, please call
-          <Link
-            href="tel:18002032999"
-            className="text-blue-600 hover:text-blue-800 "
-          >
-            18002032999
-          </Link>
+          <span className="mx-1">
+            <Link
+              href="tel:18002032999"
+              className="text-blue-600 hover:text-blue-800 "
+            >
+              18002032999
+            </Link>
+          </span>
           or mail us at
-          <Link
-            href="mailto:community.connect@manipalhospitals.com"
-            className="underline text-blue-600 hover:text-blue-800"
-          >
-            community.connect@manipalhospitals.com
-          </Link>
+          <span className="mx-1">
+            <Link
+              href="mailto:community.connect@manipalhospitals.com"
+              className="underline text-blue-600 hover:text-blue-800"
+            >
+              community.connect@manipalhospitals.com
+            </Link>
+          </span>
         </div>
       </div>
     </div>
